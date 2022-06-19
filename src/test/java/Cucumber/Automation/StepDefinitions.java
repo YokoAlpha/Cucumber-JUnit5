@@ -22,12 +22,8 @@ public class StepDefinitions {
 		System.out.print("Validated home page. ");	
 		}
 	
-	@And("^Cards are displayed$")
-	public void Cards_are_displayed()throws Throwable {
-		System.out.print("Validated cards. ");	
-		}
-	@And("^Cards are not displayed$")
-	public void Cards_are_not_displayed()throws Throwable {
-		System.out.print("Cards are not valid for this user. ");	
+	@And("^Cards displayed are \"([^\"]*)\"$")
+	public void Cards_displayed_are(String arg1)throws Throwable {
+		System.out.print("Cards displayed are " +arg1+". ");	
 		}
 }
