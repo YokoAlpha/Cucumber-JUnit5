@@ -1,16 +1,4 @@
 Feature: Application login
-
-  Scenario: Home page default login
-    Given User is on landing page
-    When User logs into application with username "Tom" and password "123"
-    Then Home page is populated
-    And Cards displayed are "true"
-
-  Scenario: Home page default login
-    Given User is on landing page
-    When User logs into application with username "Jerry" and password "345"
-    Then Home page is populated
-    And Cards displayed are "false"
     
   Scenario: Home page default login
     Given User is on landing page
@@ -18,3 +6,17 @@ Feature: Application login
     |Jenny |123|jenny@gmail.com|London|zy1 9kl|
     Then Home page is populated
     And Cards displayed are "false"
+    
+  Scenario Outline: Home page default login
+    Given User is on landing page
+    When User is login with <username> and <password>
+    Then Home page is populated
+    And Cards displayed as <valid>
+    
+   Examples:
+   |username	|password	|valid		|
+   |Tom				|123			|true			|
+   |Jerry			|345			|false		|
+   |Ada				|292			|true			|
+   |Bella			|298			|true			|
+   
