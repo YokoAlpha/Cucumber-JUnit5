@@ -1,12 +1,12 @@
 Feature: Application login
-    
+@Tag1
   Scenario: Home page default login
     Given User is on landing page
     When User sign up with following details
     |Jenny |123|jenny@gmail.com|London|zy1 9kl|
     Then Home page is populated
     And Cards displayed are "false"
-    
+@Tag2
   Scenario Outline: Home page default login
     Given User is on landing page
     When User is login with <username> and <password>
